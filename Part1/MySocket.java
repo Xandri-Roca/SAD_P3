@@ -11,7 +11,7 @@ public class MySocket{
 	private Socket socket;
 	private BufferedReader bReader; // Will be used to recieve messages.
 	private PrintWriter pWriter; // Will be used to send messages.
-
+        private String nickname;
 
 	public MySocket(String hostAddress, int hostPort){
 	// Here we create the socket with the address and port specified.
@@ -20,6 +20,7 @@ public class MySocket{
 			bReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			// We need to set the autoflush to True for the print method.
 			pWriter = new PrintWriter(socket.getOutputStream(), true);
+                        nickname = hostAddress;
 		}catch(IOException e){
 			e.printStackTrace();
 		}
@@ -56,6 +57,11 @@ public class MySocket{
 		return data;
 	}
 
+        public String getName(){
+            
+        return nickname;
+        
+        }
 
 	public void close(){
 	// This Method will close the socket and its different objects when it must be closed
