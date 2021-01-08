@@ -16,9 +16,9 @@ public class ClientConnection{
 		MySocket mSocket = new MySocket(SERVER_HOST, SERVER_PORT);
                 Scanner sc= new Scanner(System.in); 
                 System.out.print("Enter your nickname: ");  //The best thing would be for the nickname 
-                											//to be passed to the ClientConnection class 
-                											//when it is instantiated from a higher class. 
-                											//This is a solution that we have implemented.
+                					    //to be passed to the ClientConnection class 
+                					    //when it is instantiated from a higher class. 
+                					    //This is a solution that we have implemented.
                 String nick= sc.nextLine();  
  
 		SwingClient swClient = new SwingClient(nick, mSocket);
